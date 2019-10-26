@@ -33,7 +33,7 @@ def goldstein_armijo_line_search(f, dims, st):
             # If Condition 1 is satisfied check Condition 2:
             # dk'*grad(xk+1) >= eta*dk'*grad(xk)
             rhs_2 = eta * d(st).transpose().dot(g(st))
-            lhs_2 = d(st).transpose().dot(np.squeeze(g(next_pt_array), axis=1))
+            lhs_2 = d(st).transpose().dot(np.squeeze(g(next_pt_array), axis=len(dims)))
             if lhs_2 >= rhs_2:
                 lambda_k = np.power(lambda_k, l_iter)   # If both the conditions are satisfied finalize the lambda value
                 break
@@ -79,7 +79,7 @@ def cauchy_steepest_descent(fnc, dims, start):
     d = lambdify([dims], dk, "numpy")
     while max_iter <= 1000:
         if la.norm(g(start_array))/la.norm((1+f(start_array))) >= math.exp(-8):
-            start_array = start_array + lambda_k * np.squeeze(d(start_array),axis=1)      #np.squeeze is used to re-shape the start array 
+            start_array = start_array + lambda_k * np.squeeze(d(start_array),axis=len(dims))      #np.squeeze is used to re-shape the start array 
             max_iter+=1
         else: break
     output_dict = {'start':initial_start.tolist(), 'new':np.squeeze(start_array), 'iterations': max_iter, 'lambda': lambda_k, 'final_val': np.squeeze(f(start_array))}
