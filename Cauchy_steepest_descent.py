@@ -82,7 +82,7 @@ def cauchy_steepest_descent(fnc, dims, start):
             start_array = start_array + lambda_k * np.squeeze(d(start_array),axis=1)      #np.squeeze is used to re-shape the start array 
             max_iter+=1
         else: break
-    output_dict = {'start':initial_start.tolist(), 'new':np.squeeze(start_array), 'iterations': max_iter, 'lambda': lambda_k, 'final_val': np.squeeze(f(start).tolist())}
+    output_dict = {'start':initial_start.tolist(), 'new':np.squeeze(start_array), 'iterations': max_iter, 'lambda': lambda_k, 'final_val': np.squeeze(f(start_array))}
     return output_dict
 
 ################
