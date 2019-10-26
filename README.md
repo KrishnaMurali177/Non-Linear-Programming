@@ -28,7 +28,7 @@ The parameters to the fibonacci_method function to compute the minimum are
   -  a - starting point
   -  b - ending point
   
-## Neweton's method for 1-Dimensional functions
+## Newton's method for 1-Dimensional functions
 Works only for functions which have atleast 2 derivatives. The successive points is traversed through the formula Xnew = Xold - f'(Xold)/ f''(Xold)
 
 ### Dependency libraries
@@ -39,7 +39,7 @@ The parameters to the newton_method function to compute the minimum are
   - f - objective function
   - a - starting point
 
-## Neweton's method for 2-Dimensional functions
+## Newton's method for 2-Dimensional functions
 The successive points is traversed through the formula x(k+1) = x(k) - f(x(k))/f'(x(k)) where x is the matrix of starting points and f is the matrix of the objective functions
 
 ### Dependency libraries
@@ -50,3 +50,22 @@ The parameters to the newton_method2d function to compute the minimum are
   - f1, f2 - objective functions
   - start_1 - starting point(1)
   - start_2 - starting point(2)
+  
+## Cauchy's Steepest Descent algorithm
+Works for an objective function with n number of variables. The successive points is traversed through the formula Xnew = Xold + lambda * dk. There are 3 functions inside the file.
+#### goldstein_armijo_line_search
+The Goldstein-Armijo line search computes the optimum value for lambda
+#### descent_direction_verification
+Check function if direction vector is valid
+#### cauchy_steepest_descent
+Computes the minimum of the function using lambda obtained from Goldstein-Armijo criteria
+
+### Dependency libraries
+- sympy
+- numpy
+
+### Parameters
+The parameters to the cauchy_steepest_descent function to compute the minimum are
+  - f - objective function
+  - dims - list of variables in function
+  - start - starting point
