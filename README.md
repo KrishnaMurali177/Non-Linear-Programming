@@ -39,17 +39,18 @@ The parameters to the newton_method function to compute the minimum are
   - f - objective function
   - a - starting point
 
-## Newton's method for 2-Dimensional functions
+## Newton's method for multiple simultaneous functions
 The successive points is traversed through the formula x(k+1) = x(k) - f(x(k))/f'(x(k)) where x is the matrix of starting points and f is the matrix of the objective functions
 
 ### Dependency libraries
 - sympy
+- numpy
 
 ### Parameters
 The parameters to the newton_method2d function to compute the minimum are
-  - f1, f2 - objective functions
-  - start_1 - starting point(1)
-  - start_2 - starting point(2)
+    - f - list of objective functions
+    - dims - list of variables in the function
+    - start - list of starting point
   
 ## Cauchy's Steepest Descent algorithm
 Works for an objective function with n number of variables. The successive points is traversed through the formula Xnew = Xold + lambda * dk. There are 3 functions inside the file.
