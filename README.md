@@ -48,9 +48,9 @@ The successive points is traversed through the formula x(k+1) = x(k) - f(x(k))/f
 
 ### Parameters
 The parameters to the newton_method2d function to compute the minimum are
-    - f - list of objective functions
-    - dims - list of variables in the function
-    - start - list of starting point
+  - f - list of objective functions
+  - dims - list of variables in the function
+  - start - list of starting point
   
 ## Cauchy's Steepest Descent algorithm
 Works for an objective function with n number of variables. The successive points is traversed through the formula Xnew = Xold + lambda * dk. There are 3 functions inside the file.
