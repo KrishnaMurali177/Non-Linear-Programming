@@ -82,3 +82,20 @@ The parameters to the conjugate_gradient function to compute x are
 - a - Matrix A in the form of a numpy array
 - b - Matrix B in the form of a numpy array
 - start - starting point
+
+## Nonlinear Conjugate Gradient algorithm
+Works for an objective function with n number of variables. The successive points is traversed through the formula Xnew = Xold + alpha * dnew. There are 2 functions inside the file.
+#### goldstein_armijo_line_search
+The Goldstein-Armijo line search computes the optimum value for alpha
+#### cauchy_steepest_descent
+Computes the minimum of the function using alpha obtained from Goldstein-Armijo criteria
+
+### Dependency libraries
+- sympy
+- numpy
+
+### Parameters
+The parameters to the nonlinear_cg function to compute the minimum are
+  - f - objective function
+  - dims - list of variables in function
+  - start - starting point
