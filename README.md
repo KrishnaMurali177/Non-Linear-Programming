@@ -70,3 +70,15 @@ The parameters to the cauchy_steepest_descent function to compute the minimum ar
   - f - objective function
   - dims - list of variables in function
   - start - starting point
+
+## Conjugate Gradient Method
+Solving for x in ((xT * A * x)/2)  - bT * x using conjugate_gradient function where A and B are matrices
+
+### Dependency libraries
+- numpy
+
+### Parameters
+The parameters to the conjugate_gradient function to compute x are
+- a - Matrix A in the form of a numpy array
+- b - Matrix B in the form of a numpy array
+- start - starting point
