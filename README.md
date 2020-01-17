@@ -99,3 +99,103 @@ The parameters to the nonlinear_cg function to compute the minimum are
   - f - objective function
   - dims - list of variables in function
   - start - starting point
+  
+## BFGS algorithm
+Works for an objective function with n number of variables. There are 2 functions inside the file.
+#### goldstein_armijo_line_search
+The Goldstein-Armijo line search computes the optimum value for alpha
+#### bfgs
+Computes the minimum of the function using alpha obtained from Goldstein-Armijo criteria
+
+### Dependency libraries
+- sympy
+- numpy
+
+### Parameters
+The parameters to the bfgs function to compute the minimum are
+  - f - the objective function
+  - dims - list of variables in the function
+  - hessian_approximation - Identity Matrix of the size of dims
+  - start - Starting point
+  
+## Exterior_penalty_method algorithm
+Works for an objective function with 2 constraints with n number of variables. There are 3 functions inside the file.
+#### goldstein_armijo_line_search
+The Goldstein-Armijo line search computes the optimum value for alpha
+#### bfgs
+Computes the minimum of the function using alpha obtained from Goldstein-Armijo criteria
+#### ext_pen_method
+Computes the minimum of the function by running bfgs for increased penalty
+
+### Dependency libraries
+- sympy
+- numpy
+
+### Parameters
+The parameters to the ext_pen_method function to compute the minimum are
+  - f - the objective function
+  - f1 - Constraint function 1
+  - f2 - Constraint function 2
+  - dims - list of variables in the function
+
+## Interior_penalty_method algorithm
+Works for an objective function with 2 constraints with n number of variables. There are 4 functions inside the file.
+#### goldstein_armijo_line_search
+The Goldstein-Armijo line search computes the optimum value for alpha
+#### check_constraints
+Evaluates the constraints at the given point
+#### bfgs
+Computes the minimum of the function using alpha obtained from Goldstein-Armijo criteria
+#### int_pen_method
+Computes the minimum of the function by running bfgs for increased penalty
+
+### Dependency libraries
+- sympy
+- numpy
+
+### Parameters
+The parameters to the int_pen_method function to compute the minimum are
+  - f - the objective function
+  - f1 - Constraint function 1
+  - f2 - Constraint function 2
+  - dims - list of variables in the function
+  
+## Nelder_mead algorithm
+Works for an objective function with n number of variables. Creates a triangular vertex and searches space for minimum. There are 4 functions inside the file.
+#### sort_vert
+Sorts the vertices
+#### validate_mod_vert
+Validates if the vertices are in the possible space
+#### stopping_criteria
+Evaluates stopping criteria
+#### nelder_mead
+Computes the minimum of the function
+
+### Dependency libraries
+- sympy
+- numpy
+
+### Parameters
+The parameters to the nelder_mead function to compute the minimum are
+  - f - the objective function
+  - dims - list of variables in the function
+  - vertices - list of sorted vertices
+  
+## Zoutendijk algorithm
+Works for constrained objective function with n number of variables. There are 2 functions inside the file.
+#### goldstein_armijo_line_search
+The Goldstein-Armijo line search computes the optimum value for alpha
+#### Zoutendijk
+Computes the minimum of the function using alpha obtained from Goldstein-Armijo criteria
+
+### Dependency libraries
+- sympy
+- numpy
+
+### Parameters
+The parameters to the Zoutendijk function to compute the minimum are
+  - f - objective function
+  - f1 - Constraint function 1
+  - f2 - Constraint function 2
+  - dims - list of variables in function
+        start - starting point
